@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">slebew_apps</string>
+    <string name="verif">Verifikasi Login</string>
+
 </resources>
