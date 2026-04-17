@@ -12,6 +12,8 @@ import com.example.slebew_apps.MainActivity
 import com.example.slebew_apps.pertemuan_4.FourthActivity
 import com.example.slebew_apps.R
 import com.example.slebew_apps.databinding.ActivityFourthBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 
 class FourthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFourthBinding
@@ -36,6 +38,28 @@ class FourthActivity : AppCompatActivity() {
             finish()
         }
         Log.e("onCreate", "FourthActivity dibuat pertama kali")
+
+        binding.btnShowSnackbar.setOnClickListener {
+            Snackbar.make(binding.root, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
+                .setAction("Tutup"){
+                    Log.e("Info Snackbar","Snackbar ditutup")
+                }
+                .show()
+        }
+        binding.btnShowAlertDialog.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Ya!")
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Tidak!")
+                }
+                .show()
+        }
     }
     override fun onStart() {
         super.onStart()
@@ -46,4 +70,5 @@ class FourthActivity : AppCompatActivity() {
         super.onDestroy()
         Log.e("onDestroy", "FourthActivity dihapus dari stack")
     }
+
     }
