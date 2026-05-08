@@ -7,8 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.slebew_apps.databinding.ActivityMainBinding
-import com.example.slebew_apps.MainActivity
-import com.example.slebew_apps.pertemuan_4.FourthActivity
+import com.example.slebew_apps.Home.pertemuan_4.FourthActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

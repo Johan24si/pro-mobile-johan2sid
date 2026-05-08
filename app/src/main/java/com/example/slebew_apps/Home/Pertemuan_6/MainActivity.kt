@@ -1,6 +1,5 @@
-package com.example.slebew_apps.Pertemuan_6
+package com.example.slebew_apps.Home.Pertemuan_6
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
             builder.setPositiveButton("Ya") { _, _ ->
                 // 1. Update SharedPreferences menjadi false
-                val sharedPref = getSharedPreferences("SlebewPrefs", Context.MODE_PRIVATE)
+                val sharedPref = getSharedPreferences("SlebewPrefs", MODE_PRIVATE)
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", false)
                 editor.apply()

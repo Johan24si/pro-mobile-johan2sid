@@ -1,12 +1,12 @@
-package com.example.slebew_apps.Pertemuan_6
+package com.example.slebew_apps.Home.Pertemuan_6
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.slebew_apps.Home.Pertemuan_7.SeventhActivity
 import com.example.slebew_apps.R
 
 class AuthActivity : AppCompatActivity() {
@@ -15,12 +15,12 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // 1. Inisialisasi SharedPreferences dengan nama file "SlebewPrefs"
-        val sharedPref = getSharedPreferences("SlebewPrefs", Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences("SlebewPrefs", MODE_PRIVATE)
 
         // 2. CEK STATUS: Jika isLogin bernilai true, langsung arahkan ke MainActivity
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, SeventhActivity::class.java))
             finish() // Mengakhiri AuthActivity agar tidak bisa di-back
             return
         }
@@ -44,7 +44,7 @@ class AuthActivity : AppCompatActivity() {
                 editor.apply() // Menyimpan secara asinkron
 
                 // Pindah ke MainActivity
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, SeventhActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

@@ -1,4 +1,4 @@
-package com.example.slebew_apps.Pertemuan2
+package com.example.slebew_apps.Home.Pertemuan2
 
 import android.os.Bundle
 import android.util.Log

@@ -1,6 +1,5 @@
-package com.example.slebew_apps.Pertemuan_6
+package com.example.slebew_apps.Home.Pertemuan_6
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -19,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
             delay(2000)
 
             // Cek SharedPreferences
-            val sharedPref = getSharedPreferences("SlebewPrefs", Context.MODE_PRIVATE)
+            val sharedPref = getSharedPreferences("SlebewPrefs", MODE_PRIVATE)
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
             if (isLogin) {

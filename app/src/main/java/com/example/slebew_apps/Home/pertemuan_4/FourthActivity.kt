@@ -1,15 +1,13 @@
-package com.example.slebew_apps.pertemuan_4
+package com.example.slebew_apps.Home.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.slebew_apps.MainActivity
-import com.example.slebew_apps.pertemuan_4.FourthActivity
 import com.example.slebew_apps.R
 import com.example.slebew_apps.databinding.ActivityFourthBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder

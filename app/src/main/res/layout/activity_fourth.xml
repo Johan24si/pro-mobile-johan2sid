@@ -7,7 +7,7 @@
     android:background="@drawable/bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pertemuan_4.FourthActivity">
+    tools:context=".Home.pertemuan_4.FourthActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"

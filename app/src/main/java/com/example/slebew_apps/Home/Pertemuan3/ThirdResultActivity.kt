@@ -1,4 +1,4 @@
-package com.example.slebew_apps.Pertemuan3
+package com.example.slebew_apps.Home.Pertemuan3
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
