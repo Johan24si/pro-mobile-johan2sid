@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.slebew_apps.databinding.ActivityMainBinding
 import com.example.slebew_apps.Home.pertemuan_4.FourthActivity
+import com.example.slebew_apps.Home.pertemuan_9.NinthActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
 
+            startActivity(intent)
+        }
+        binding.buttonNinth.setOnClickListener {
+            val intent = Intent(this, NinthActivity::class.java)
             startActivity(intent)
         }
     }

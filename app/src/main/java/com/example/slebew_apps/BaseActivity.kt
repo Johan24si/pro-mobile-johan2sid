@@ -1,14 +1,13 @@
 package com.example.slebew_apps.Home.Pertemuan_7
 
 import android.os.Bundle
-
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.slebew_apps.Home.HomeFragment
-import com.example.slebew_apps.Message.MessageFragment
+import com.example.slebew_apps.Message.FragmentMessage
 import com.example.slebew_apps.More.MoreFragment
 import com.example.slebew_apps.R
 import com.example.slebew_apps.databinding.ActivityBaseBinding
@@ -32,7 +31,7 @@ class BaseActivity : AppCompatActivity() {
                     true
                 }
                 R.id.message -> {
-                    replaceFragment(MessageFragment())
+                    replaceFragment(FragmentMessage())
                     true
                 }
                 R.id.more -> {
@@ -50,5 +49,4 @@ class BaseActivity : AppCompatActivity() {
             //.addToBackStack(null) -> ini kita nonaktifkan agar saat back langsung keluar aplikasi
             .commit()
     }
-
 }

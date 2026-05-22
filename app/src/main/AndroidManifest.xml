@@ -14,21 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Slebew_apps">
         <activity
-            android:name=".BaseActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".Message.FragmentMessage"
+            android:exported="false" />
+        <activity
+            android:name=".Home.pertemuan_9.NinthActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Home.Pertemuan_7.BaseActivity"
+            android:exported="true" />
         <activity
             android:name=".Home.Pertemuan_7.SeventhActivity"
             android:exported="false" />
         <activity
             android:name=".Home.Pertemuan_6.SplashScreenActivity"
             android:exported="true" />
-
         <activity
             android:name=".Home.Pertemuan_6.MainActivity"
             android:exported="false" />
@@ -55,7 +54,13 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
