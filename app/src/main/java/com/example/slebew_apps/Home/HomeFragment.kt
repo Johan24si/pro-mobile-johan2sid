@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.slebew_apps.Home.Pertemuan2.SecondActivity
 import com.example.slebew_apps.Home.Pertemuan3.ThirdActivity
 import com.example.slebew_apps.Home.pertemuan_4.FourthActivity
@@ -15,7 +16,10 @@ import com.example.slebew_apps.Home.pertemuan_5.FifthActivity
 import com.example.slebew_apps.Home.Pertemuan_7.SeventhActivity
 import com.example.slebew_apps.Home.pertemuan_9.NinthActivity
 import com.example.slebew_apps.Home.pertemuan_10.TenthActivity
+import com.example.slebew_apps.Home.photo.PhotoActivity
+import com.example.slebew_apps.Home.photo.PhotoAdapter
 import com.example.slebew_apps.data.api.CatFactApiClient
+import com.example.slebew_apps.data.api.PhotoApiClient
 import com.example.slebew_apps.databinding.FragmentHomeBinding
 import kotlinx.coroutines.launch
 
@@ -56,11 +60,37 @@ class HomeFragment : Fragment() {
             btnPertemuan10.setOnClickListener {
                 startActivity(Intent(requireContext(), TenthActivity::class.java))
             }
+            btnPertemuan11.setOnClickListener {
+                startActivity(Intent(requireContext(), PhotoActivity::class.java))
+            }
             btnRefresh.setOnClickListener {
                 loadCatFact()
             }
         }
         loadCatFact()
+        loadPhoto()
+    }
+
+    private fun loadPhoto() {
+        lifecycleScope.launch {
+            try {
+                val photos = PhotoApiClient.apiService.getPhotos()
+                val adapter = PhotoAdapter(photos)
+                binding.rvGallery.adapter = adapter
+
+                /** List Tampil Vertical*/
+                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+
+                /** List Tampil Horizontal */
+                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+                /** List Tampil Grid */
+                //binding.rvGallery.layoutManager = GridLayoutManager(requireContext(),2)
+
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun loadCatFact() {
