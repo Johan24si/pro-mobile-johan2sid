@@ -1,11 +1,12 @@
 package com.example.slebew_apps.Message
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.slebew_apps.Message.tutorial.TutorialMessageActivity
+import com.example.slebew_apps.R
 import com.example.slebew_apps.databinding.FragmentMessageBinding
 
 class FragmentMessage : Fragment() {
@@ -42,10 +43,26 @@ class FragmentMessage : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Message"
         }
+        setHasOptionsMenu(true)
 
         // Setup Adapter
         val adapter = MessageAdapter(requireContext(), messageList)
         binding.listMessageItem.adapter = adapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.message_toolbar_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_tutorial -> {
+                val intent = Intent(requireContext(), TutorialMessageActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onDestroyView() {
